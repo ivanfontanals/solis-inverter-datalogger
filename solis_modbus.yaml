@@ -1,0 +1,179 @@
+- name: system_datetime
+  description: System DateTime
+  unit:
+  active: false
+  modbus:
+    register: [33022, 33023, 33024, 33025, 33026, 33027] # [year, month, day, hour, minute, seconds]
+    read_type: composed_datetime
+    function_code: 4
+
+- name: total_generation
+  description: Total Generation
+  unit: Kw
+  active: true
+  modbus:
+    register: 33029
+    read_type: long
+    function_code: 4
+    signed: false
+
+- name: today_generated
+  description: Today Generation
+  unit: W
+  active: true
+  modbus:
+    register: 33035
+    read_type: register
+    number_of_decimals: 1
+    function_code: 4
+    signed: false
+
+- name: DC_V
+  description: DC_V
+  unit: V
+  active: true
+  modbus:
+    register: 33049
+    read_type: register
+    number_of_decimals: 1
+    function_code: 4
+    signed: false
+    
+- name: DC_A
+  description: DC_A
+  unit: A
+  active: true
+  modbus:
+    register: 33050
+    read_type: register
+    number_of_decimals: 1
+    function_code: 4
+    signed: false
+
+- name: AC_V
+  description: AC_V
+  unit: V
+  active: true
+  modbus:
+    register: 33251
+    read_type: register
+    number_of_decimals: 1
+    function_code: 4
+    signed: false
+    
+- name: AC_A
+  description: AC_A
+  unit: A
+  active: true
+  modbus:
+    register: 33252
+    read_type: register
+    number_of_decimals: 2
+    function_code: 4
+    signed: false
+
+
+- name: inverter_temp
+  description: Inverter temperature
+  unit: "°C"
+  active: true
+  modbus:
+    register: 33093
+    read_type: register
+    function_code: 4
+    number_of_decimals: 1
+    signed: false
+
+
+- name: meter_voltage
+  description: meter_voltage
+  unit: V
+  active: true
+  modbus:
+    register: 33128
+    read_type: register
+    number_of_decimals: 1
+    function_code: 4
+    signed: false
+
+
+- name: meter_current
+  description: meter_current
+  unit: A
+  active: true
+  modbus:
+    register: 33129
+    read_type: register
+    number_of_decimals: 2
+    function_code: 4
+    signed: false
+
+
+
+- name: GRID_POWER
+  description: Meter Active Power 1(0.1W) FROM GRID
+  unit: W
+  active: true
+  modbus:
+    register: 33130
+    read_type: long
+    function_code: 4
+    signed: true
+
+- name: SOLAR_POWER
+  description: Total DC Input Power (W)
+  unit: W
+  active: true
+  modbus:
+    register: 33057
+    read_type: long
+    function_code: 4
+    signed: true
+
+- name: HOME_POWER
+  description: House Load Power(W)
+  unit: "W"
+  active: true
+  modbus:
+    register: 33147
+    read_type: register
+    number_of_decimals: 0
+    function_code: 4
+    signed: true
+
+
+- name: active_power
+  description: Active Power
+  unit: "W"
+  active: false
+  modbus:
+    register: 33079
+    read_type: long
+    function_code: 4
+    signed: true
+
+- name: today_imported_energy
+  description: Today Imported Energy (0.1kWh)
+  unit: W
+  active: true
+  modbus:
+    register: 33171
+    read_type: register
+    number_of_decimals: 1
+    function_code: 4
+    signed: false
+
+
+- name: today_exported_energy
+  description: Today Exported Energy(0.1kWh)
+  unit: W
+  active: true
+  modbus:
+    register: 33175
+    read_type: register
+    number_of_decimals: 1
+    function_code: 4
+    signed: false
+
+
+    

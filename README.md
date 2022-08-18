@@ -1,1 +1,1 @@
-# solis-inverter-datalogger
+# Solis-inverter Datalogger

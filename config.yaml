@@ -1,0 +1,15 @@
+device: /dev/ttyUSB0
+slave_address: 1
+poll_interval: 1
+poll_interval_if_off: 600
+inverter:
+    name: solis2mqtt
+    manufacturer: Ginlong Technologies
+    model: solis2mqtt
+mqtt:
+    url: hassio.local
+    port: 8883
+    use_ssl: true
+    validate_cert: true
+    user: whoami
+    passwd: secret    
